@@ -62,7 +62,8 @@ Initialized Current URL
 
 ```JS
 jQuery(() => {
-			
+ 
+  // Current URL
   let isURL = window.location.href;
   let isD  = 'https://< domain >/blog';
   let isDp = 'https://< domain >/blog?page-id=2';
