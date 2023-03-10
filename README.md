@@ -1,5 +1,5 @@
 # WPPaginationURLFormat
-WP Pagination URL Format from < d.com/blog/page/2 > To < d.com/blog/?page=2 >
+WP Pagination URL Format from < d.com/blog/page/2 > To < d.com/blog/?page-id=2 >
 
 Format URL custom pagination page counter display. 
 
