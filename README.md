@@ -20,8 +20,6 @@ Format URL custom pagination page counter display.
        'order'            => 'DESC'
   
   ]);
-   
-   echo ('<div id="tl_container" class="sb-row">');
 
    if($wp_query_this->have_posts() ): 
 			
