@@ -54,3 +54,7 @@ Format URL custom pagination page counter display.
 
 ?>
 ```
+
+<br /> Reference: 
+<br /> https://developer.wordpress.org/reference/functions/paginate_links/
+<br /> https://wordpress.stackexchange.com/questions/275527/paginate-links-ignore-my-format
