@@ -46,8 +46,8 @@ Format URL custom pagination page counter display.
         'end_size'     => 2,
         'mid_size'     => 1,
         'prev_next'    => true,
-        'prev_text'    => '<i></i> <i class="icon-chevron-left"></i>',
-        'next_text'    => '<i class="icon-chevron-right"></i> <i></i>',
+        'prev_text'    => '« Previous',
+        'next_text'    => 'Next »',
         'add_args'     => false,
         'add_fragment' => '',
     ]);
