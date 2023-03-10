@@ -7,27 +7,25 @@ Format URL custom pagination page counter display.
 <?php 
   
   # Default Pagination : < domain.com >/blog/page/2
-  # Modified URL : < domain.com >/blog/?page=2
+  # Modified URL : < domain.com >/blog/?page-id=2
   
-  $current   = max( 1, (int) filter_input( INPUT_GET, 'p-page' ) );
+  $current = max( 1, (int) filter_input( INPUT_GET, 'page-id' ) );
 
   $args = [
-      'posts_per_page'   => 6,
-      'post_type'        => 'post',
-      'paged'            => $current,
-      'orderby'          => 'date',
-      'order'            => 'DESC'
+	'posts_per_page'   => 3,
+	'post_type'        => 'post',
+	'paged'            => $current,
+	'orderby'          => 'date',
+	'order'            => 'DESC'
   ];
 
-  $customPostQuery = new WP_Query($args);
+  $wp_query_this = new WP_Query($args);
    
    echo ('<div id="tl_container" class="sb-row">');
 
-   if($customPostQuery->have_posts() ): 
+   if($wp_query_this->have_posts() ): 
 			
-      while($customPostQuery->have_posts()) :
-                   
-	     $customPostQuery->the_post();
+      while($wp_query_this->have_posts()) : $wp_query_this->the_post();
 					   
 	     print(wp_strip_all_tags(get_the_title()) . "<br />"); 
 
@@ -37,12 +35,12 @@ Format URL custom pagination page counter display.
 	 wp_reset_query();
 
    // Update URL Format Post Pagination
-   echo paginate_links([
-
+  echo paginate_links([
+  
         'base'         => '%_%',
-        'total'        => $customPostQuery->max_num_pages,
+        'total'        => $wp_query_this->max_num_pages, // $wp_query_this base on parent query !
         'current'      => $current,
-        'format'       => '?p-page=%#%',
+        'format'       => '?page-id=%#%',
         'show_all'     => false,
         'type'         => 'plain',
         'end_size'     => 2,
@@ -52,8 +50,7 @@ Format URL custom pagination page counter display.
         'next_text'    => '<i class="icon-chevron-right"></i> <i></i>',
         'add_args'     => false,
         'add_fragment' => '',
-    
-   ]);
+    ]);
 
 ?>
 ```
