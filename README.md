@@ -34,7 +34,8 @@ Format URL custom pagination page counter display.
 	 
 	 wp_reset_query();
 
-   // Update URL Format Post Pagination
+  // Update URL Format Post Pagination 
+  echo('<div id="id_tl_pagination">');
   echo paginate_links([
   
         'base'         => '%_%',
@@ -50,9 +51,32 @@ Format URL custom pagination page counter display.
         'next_text'    => 'Next »',
         'add_args'     => false,
         'add_fragment' => '',
+	
     ]);
+  echo('<div>');
 
 ?>
+```
+
+Initialized Current URL
+
+```JS
+jQuery(() => {
+			
+  let isURL = window.location.href;
+  let isD  = 'https://< domain >/blog/';
+  let isDp = 'https://< domain >/blog?page-id=2';
+	
+  if( isURL === isD ) {
+	jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog?page-id=2');  
+  }	else if( isURL ===  isDp ) {
+	jQuery('#id_tl_pagination a:nth-Child(1)').attr('href','/blog'); 
+	jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog'); 
+  } else if( isURL !== isD || isURL !== 'https://< domain >/blog' ) {
+    jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog');  
+  }
+
+});
 ```
 
 <br /> Reference: 
