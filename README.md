@@ -11,15 +11,15 @@ Format URL custom pagination page counter display.
   
   $current = max( 1, (int) filter_input( INPUT_GET, 'page-id' ) );
 
-  $args = [
-	'posts_per_page'   => 3,
-	'post_type'        => 'post',
-	'paged'            => $current,
-	'orderby'          => 'date',
-	'order'            => 'DESC'
-  ];
-
-  $wp_query_this = new WP_Query($args);
+  $wp_query_this = new WP_Query([
+  
+       'posts_per_page'   => 3,
+       'post_type'        => 'post',
+       'paged'            => $current,
+       'orderby'          => 'date',
+       'order'            => 'DESC'
+  
+  ]);
    
    echo ('<div id="tl_container" class="sb-row">');
 
@@ -27,12 +27,13 @@ Format URL custom pagination page counter display.
 			
       while($wp_query_this->have_posts()) : $wp_query_this->the_post();
 					   
-	     print(wp_strip_all_tags(get_the_title()) . "<br />"); 
+	print(wp_strip_all_tags(get_the_title()) . "<br />"); 
 
-     endwhile; 
-	 endif; 
+      endwhile;
+      
+    endif; 
 	 
-	 wp_reset_query();
+    wp_reset_query();
 
   // Update URL Format Post Pagination 
   echo('<div id="id_tl_pagination">');
