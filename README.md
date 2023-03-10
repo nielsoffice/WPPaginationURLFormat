@@ -69,12 +69,12 @@ jQuery(() => {
   let isDp = 'https://< domain >/blog?page-id=2';
 	
   if( isURL === isD ) {
-	jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog?page-id=2');  
-  }	else if( isURL ===  isDp ) {
-	jQuery('#id_tl_pagination a:nth-Child(1)').attr('href','/blog'); 
-	jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog'); 
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog?page-id=2');  
+  } else if( isURL ===  isDp ) {
+     jQuery('#id_tl_pagination a:nth-Child(1)').attr('href','/blog'); 
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog'); 
   } else if( isURL !== isD || isURL !== 'https://< domain >/blog/' ) {
-    jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog');  
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog');  
   }
 
 });
