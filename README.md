@@ -82,3 +82,4 @@ jQuery(() => {
 <br /> Reference: 
 <br /> https://developer.wordpress.org/reference/functions/paginate_links/
 <br /> https://wordpress.stackexchange.com/questions/275527/paginate-links-ignore-my-format
+<br /> https://nielsoffice197227997.wordpress.com/2021/11/24/wordpress-the-loop-fetch-data-from-database-wp_query-php/
