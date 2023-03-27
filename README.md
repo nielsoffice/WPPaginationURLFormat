@@ -40,7 +40,7 @@ Format URL custom pagination page counter display.
         'base'         => '%_%',
         'total'        => $wp_query_this->max_num_pages, // $wp_query_this base on parent query !
         'current'      => $current,
-        'format'       => '?page-id=%#%',
+        'format'       => '?post-paged=%#%',
         'show_all'     => false,
         'type'         => 'plain',
         'end_size'     => 2,
@@ -60,22 +60,25 @@ Format URL custom pagination page counter display.
 Initialized Current URL
 
 ```JS
+
 jQuery(() => {
- 
-  // Current URL
+			
   let isURL = window.location.href;
-  let isD  = 'https://< domain >/blog';
-  let isDp = 'https://< domain >/blog?page-id=2';
+  let isD   = 'https://< domain >/blog/';
+  let isDp  = 'https://< domain >/blog/?post-paged=2';
+  let isDp1 = 'https://< domain >/blog/?post-paged=1';	
 	
   if( isURL === isD ) {
-     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog?page-id=2');  
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/?post-paged=2');  
   } else if( isURL ===  isDp ) {
-     jQuery('#id_tl_pagination a:nth-Child(1)').attr('href','/blog'); 
-     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog'); 
+     jQuery('#id_tl_pagination a:nth-Child(1)').attr('href','/blog/?post-paged=1'); 
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/'); 
+  } else if( isURL === isDp1 ) {
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/?post-paged=2');   
   } else if( isURL !== isD || isURL !== 'https://< domain >/blog/' ) {
-     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog');  
-  }
-
+    jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/'); 
+	   
+  } 
 });
 ```
 
