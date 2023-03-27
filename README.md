@@ -76,7 +76,7 @@ jQuery(() => {
   } else if( isURL === isDp1 ) {
      jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/?post-paged=2');   
   } else if( isURL !== isD || isURL !== 'https://< domain >/blog/' ) {
-    jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/'); 
+     jQuery('#id_tl_pagination a:nth-Child(2)').attr('href','/blog/'); 
 	   
   } 
 });
