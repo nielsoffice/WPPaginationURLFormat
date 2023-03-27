@@ -1,5 +1,5 @@
 # WPPaginationURLFormat
-WP Pagination URL Format from < d.com/blog/page/2 > To < d.com/blog?page-id=2 >
+WP Pagination URL Format from < d.com/blog/page/2 > To < d.com/blog/?post-paged=2 >
 
 Format URL custom pagination page counter display. 
 
@@ -9,7 +9,7 @@ Format URL custom pagination page counter display.
   # Default Pagination : < domain.com >/blog/page/2
   # Modified URL : < domain.com >/blog?page-id=2
   
-  $current = max( 1, (int) filter_input( INPUT_GET, 'page-id' ) );
+  $current = max( 1, (int) filter_input( INPUT_GET, 'post-paged' ) );
 
   $wp_query_this = new WP_Query([
   
